@@ -32,6 +32,13 @@ function receivePlaces(payload) {
   }
 }
 
+export function failurePlaces(payload) {
+  return {
+    type: FAILURE_PLACES,
+    error: payload
+  }
+}
+
 function receivePlace(payload) {
   return {
     type: RECEIVE_PLACE,
@@ -48,7 +55,7 @@ export function fetchPlaces(latitude, longitude) {
       })
       .then(response => dispatch(receivePlaces(response.data.businesses)))
       .catch(error => {
-        dispatch({ type: FAILURE_PLACES })
+        dispatch(failurePlaces('Failed to load places'))
         console.log(error)
       })
   }

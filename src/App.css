@@ -8,10 +8,10 @@
 .main {
   position: relative;
   background: #f5f7fa;
-  width: 100%;
-  height: 100%;
   flex: 1;
-  overflow: hidden auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-bottom: 200px;
 }
 
 .sidebar {
@@ -89,18 +89,19 @@
 }
 
 .deck-container {
-  padding-top: 80px;
+  padding-top: 100px;
   width: 100%;
   height: 100%;
 }
 
 .deck-actions {
-  text-align: center;
   position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 2;
+  bottom: 80px;
   width: 100%;
-  top: 660px;
-  padding-bottom: 50px;
 }
 
 .deck-actions button {
@@ -113,10 +114,6 @@
   .deck-container {
     padding-top: 0px;
   }
-
-  .deck-actions {
-    top: 550px;
-  }
 }
 
 .deck-loader {
@@ -126,6 +123,16 @@
   flex-direction: column;
   width: 100%;
   height: 100%;
+}
+
+.deck-loader.error-message {
+  max-width: 600px;
+  text-align: center;
+  margin: auto;
+}
+
+.deck-loader p {
+  line-height: 1.4;
 }
 
 .deck-loader svg {

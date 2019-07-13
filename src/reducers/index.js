@@ -9,14 +9,14 @@ import {
   REMOVE_MATCH
 } from '../constants/action-types'
 
-function places(state = { isFetching: false, items: [] }, action) {
+function places(state = { isFetching: false, items: [], error: '' }, action) {
   switch (action.type) {
     case REQUEST_PLACES:
       return { ...state, isFetching: true }
     case RECEIVE_PLACES:
       return { ...state, isFetching: false, items: action.places }
     case FAILURE_PLACES:
-      return { ...state, isFetching: false }
+      return { ...state, isFetching: false, error: action.error }
     default:
       return state
   }

@@ -35,12 +35,14 @@ function DeckActions({ refresh, swipeCard, current }) {
       </IconButton>
       <IconButton
         onClick={() => swipeCard(current, -1)}
-        className={classes.iconButton}>
+        className={classes.iconButton}
+      >
         <CloseIcon className={classes.nopeIcon} />
       </IconButton>
       <IconButton
         onClick={() => swipeCard(current, 1)}
-        className={classes.iconButton}>
+        className={classes.iconButton}
+      >
         <FavoriteIcon className={classes.likeIcon} />
       </IconButton>
     </div>

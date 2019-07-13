@@ -45,36 +45,36 @@ function App() {
       <Router>
         <div className="app-container">
           <Sidebar showSidebar={showSidebar} onHideSidebar={onHideSidebar} />
+          <div className="mobile-navbar">
+            <IconButton onClick={toggleSideBar}>
+              <MenuIcon style={{ fontSize: 40 }} />
+            </IconButton>
+            <Link to="/">
+              <FastfoodIcon
+                style={{ fontSize: 40 }}
+                component={svgProps => {
+                  return (
+                    <svg {...svgProps}>
+                      <defs>
+                        <linearGradient id="gradient1">
+                          <stop offset="30%" stopColor="#FE6B8B" />
+                          <stop offset="90%" stopColor="#FF8E53" />
+                        </linearGradient>
+                      </defs>
+                      {React.cloneElement(svgProps.children[0], {
+                        fill: 'url(#gradient1)'
+                      })}
+                    </svg>
+                  )
+                }}
+              />
+            </Link>
+            <IconButton>
+              {/* Placeholder for now */}
+              <MenuIcon style={{ fontSize: 40, visibility: 'hidden' }} />
+            </IconButton>
+          </div>
           <main className="main">
-            <div className="mobile-navbar">
-              <IconButton onClick={toggleSideBar}>
-                <MenuIcon style={{ fontSize: 40 }} />
-              </IconButton>
-              <Link to="/">
-                <FastfoodIcon
-                  style={{ fontSize: 40 }}
-                  component={svgProps => {
-                    return (
-                      <svg {...svgProps}>
-                        <defs>
-                          <linearGradient id="gradient1">
-                            <stop offset="30%" stopColor="#FE6B8B" />
-                            <stop offset="90%" stopColor="#FF8E53" />
-                          </linearGradient>
-                        </defs>
-                        {React.cloneElement(svgProps.children[0], {
-                          fill: 'url(#gradient1)'
-                        })}
-                      </svg>
-                    )
-                  }}
-                />
-              </Link>
-              <IconButton>
-                {/* Placeholder for now */}
-                <MenuIcon style={{ fontSize: 40, visibility: 'hidden' }} />
-              </IconButton>
-            </div>
             <Route path="/" exact component={Places} />
             <Route path="/place/:id" component={PlaceDetail} />
           </main>

@@ -142,7 +142,7 @@ function Deck({ places, addMatch, removeMatch }) {
   )
 
   return (
-    <div className="deck-container">
+    <>
       {springs.map(({ x, y, rot, scale, shadow }, i) => (
         <animated.div
           className="deck"
@@ -152,7 +152,8 @@ function Deck({ places, addMatch, removeMatch }) {
               [x, y],
               (x, y) => `translate3d(${x}px,${y}px,0)`
             )
-          }}>
+          }}
+        >
           {/* This is the card itself, we're binding our gesture to it (and inject its index so we know which is which) */}
           <Card
             x={x}
@@ -168,7 +169,7 @@ function Deck({ places, addMatch, removeMatch }) {
         </animated.div>
       ))}
       <DeckActions refresh={refresh} current={current} swipeCard={swipeCard} />
-    </div>
+    </>
   )
 }
 
