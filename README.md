@@ -2,6 +2,8 @@
 
 FoodMatcher is a Tinder-inspired app that helps you figure out where you want to eat. It uses geolocation and the Yelp API to find food places near you.
 
+![preview](https://github.com/naizen/foodmatcher/blob/master/src/assets/demo.gif)
+
 ## Features
 
 - Swipable cards with [react-spring](https://github.com/react-spring) and [react-use-gesture](https://github.com/react-spring/react-use-gesture)
