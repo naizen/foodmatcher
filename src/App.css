@@ -160,6 +160,7 @@
   background-size: cover;
   background-position: center center;
   border-radius: 4px;
+  will-change: transform;
   /*box-shadow: 0 2px 10px 0 rgba(155, 155, 155, 0.2);*/
 }
 

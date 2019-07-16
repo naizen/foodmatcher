@@ -11,7 +11,7 @@ const to = (i, current) => {
     y: -50,
     scale: 1,
     rot: 0,
-    delay: 0.2,
+    delay: 1,
     shadow: i === current ? 1 : 0
   }
 }
@@ -89,9 +89,10 @@ function Deck({ places, addMatch, removeMatch }) {
       } else if (xDelta > 0) {
         swipeDelta = 1
       }
-      setSwipeDelta(swipeDelta)
       if (!down) {
         setSwipeDelta(0)
+      } else {
+        setSwipeDelta(swipeDelta)
       }
 
       if (!down && trigger) {
@@ -152,8 +153,7 @@ function Deck({ places, addMatch, removeMatch }) {
               [x, y],
               (x, y) => `translate3d(${x}px,${y}px,0)`
             )
-          }}
-        >
+          }}>
           {/* This is the card itself, we're binding our gesture to it (and inject its index so we know which is which) */}
           <Card
             x={x}
