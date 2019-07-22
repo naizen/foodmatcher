@@ -6,6 +6,7 @@ FoodMatcher is a Tinder-inspired app that helps you figure out where you want to
 
 ## Features
 
+- UI Components with [material-ui](https://github.com/mui-org/material-ui)
 - Swipable cards with [react-spring](https://github.com/react-spring) and [react-use-gesture](https://github.com/react-spring/react-use-gesture)
 - Save matches using localStorage
 - Redux for state management
